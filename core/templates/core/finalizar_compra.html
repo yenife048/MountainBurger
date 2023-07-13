@@ -1,0 +1,79 @@
+{% extends 'core/base.html'%}
+
+{% load static %}
+<title>{% block title %}Finalizar Compra{% endblock %}</title>
+
+{% block content %}
+
+<div class="boton_regresar">
+  <a href="{% url 'inicio' %}" class="volver"><svg xmlns="http://www.w3.org/2000/svg" height="45" fill="#eef2f1" class="bi bi-arrow-left" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg> REGRESAR</a>
+</div>
+<br>
+      <section>
+        <div class="cuerpo3">
+          <div class="finali">
+           <h2>Finalizacion de tu pedido</h2>
+          </div>
+          <div class="codigo">
+           <h2>Codigo de compra:  </h2>
+          </div>
+      </section>
+<form>
+      <section class="secciones">
+      <div class="caja1">
+        <div class="caja_for1">
+        Correo Electronico<input class="controls" type="email" id="email2" required>        
+        Nombre De Quien Recibe<input class="controls" type="text" id="nombre2" required>
+        Telefono De Quien Recibe<input class="controls" type="tel" id="tel2" required>
+        </div>
+
+        <div class="caja_for2">
+          <label for="validationDefault04" class="form-label">Forma De Entrega</label>
+          <select class="form-select" id="validationDefault04"required style="background-color:rgba(222, 147, 18, 0.58); color: aliceblue;">
+            <option selected disabled value="" style="color:black;">Opciones</option>
+            <option class="tipo" style="color:black;">Ir Al Lugar</option>
+            <option class="tipo" style="color:black;">Domicilio</option>
+          </select>
+        Direccion de Entrega y barrio<input class="controls" type="text" id="tex1" required>        
+        Indicaciones Adiccionales<input class="controls" type="text" id="tex2" style="background-color: rgba(255, 245, 245, 0.796); color: black;" placeholder="Torre 4, Apartamento 604">        
+        </div>
+      </div>
+      </section>
+
+
+      <section class="secciones1">
+        <div class="caja2">
+          <div class="caja_for3">
+            <label for="validationDefault04" class="form-label">¿Como quieres pagar?</label>
+            <select class="form-select" id="validationDefault04" required style="background-color: rgba(222, 147, 18, 0.58); color: aliceblue;">
+              <option selected disabled value="" style="color:black;">pagos</option>
+              <option class="tipo" value="1" style="color:black;">Efectivo</option>
+              <option class="tipo" value="2" style="color:black;">Nequi</option>
+            </select>      
+<br>
+        <p class="domi" style="color: aliceblue;">Tu domicilio sera cobrado en el momento de la entrega</p>
+        <div class="caja_carro text-center">
+          {% include "carro/widget.html" %}
+        </div>
+          </div>
+        
+        <div id="caja_for4">
+          <ol style="color: aliceblue;">
+            <strong style="color: black;">Si tu opcion fue nequi, sigue estos pasos:</strong><br>
+       <li>Telefono : 314 412 66 68 <br></li>
+       <li>En la opcion "¿cuanto?": Ingresa el total a pagar, si hace falta no se entregara el domicilio </li>
+      <li>Donde dice "mensaje", agrega el codigo de la compra que aparece en la parte superior de la pagina</li>
+    listo!
+  </ol>
+        </div>
+        </section>
+
+        <div class="boton_enviar">
+          <button type="submit" class="btn btn-warning">Enviar Pedido
+        </div>
+</form>
+  
+ 
+{% endblock %}
