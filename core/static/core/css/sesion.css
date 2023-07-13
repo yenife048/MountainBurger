@@ -22,19 +22,11 @@
     border: 1px solid white;
 }
 
-#formulario input[type="submit"] {
-    background-color: rgb(238, 158, 11);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin: 13px 0;
-    border: 1px solid white;
-    font-weight: bold;
-}
+
 
 #formulario p {
     color: rgb(255, 255, 255);
     text-align: center;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: bold;
 }
