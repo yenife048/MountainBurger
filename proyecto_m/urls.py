@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 from core import views as core_views
 from productos import views as productos_views
 from acerca import views as acerca_views
+
+
 
 
 from django.conf import settings 
@@ -64,8 +66,10 @@ urlpatterns = [
     #porciones
     path('porcionp/',core_views.porcionp, name='porcionp'),
     path('porcionh/',core_views.porcionh, name='porcionh'), 
-
     path('finalizar_compra/',core_views.finalizar_compra, name='finalizar_compra'),
+    
+    #formularios
+    path('formularios/', include ('formularios.urls')),
 ]
 
 if settings.DEBUG:

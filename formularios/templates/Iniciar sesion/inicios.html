@@ -1,0 +1,62 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+<title>{% block title %}Mountain Burger{% endblock %}</title>
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'core/css/sesion.css' %}">
+
+
+
+<div id="formulario">
+    <h2>INICIAR SESIÓN</h2>
+    <form action="#" method="POST" onsubmit="return validarFormulario()">
+        <input type="text" id="email" placeholder="Email" required>
+        <input type="password" id="contrasena" placeholder="Contraseña" required>
+        <input type="submit" value="Iniciar sesión">
+    </form>
+    <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
+    <p>¿Olvidaste tu contraseña?</p>
+</div>
+
+
+<script>
+    function validarFormulario() {
+
+        var email = document.getElementById("email").value;
+        var contrasena = document.getElementById("contrasena").value;
+
+ 
+        document.getElementById("emailError").innerHTML = "";
+        document.getElementById("contrasenaError").innerHTML = "";
+
+
+        if (email === "") {
+            document.getElementById("emailError").innerHTML = "Por favor, ingresa un email válido.";
+            return false;
+        }
+
+
+        if (contrasena === "") {
+            document.getElementById("contrasenaError").innerHTML = "Por favor, ingresa una contraseña válida.";
+            return false;
+        }
+
+        if (email !== "usuario@example.com" || contrasena !== "contraseña123") {
+            document.getElementById("emailError").innerHTML = "Email incorrecto.";
+            document.getElementById("contrasenaError").innerHTML = "Contraseña incorrecta.";
+            return false;
+        }
+
+        var mensajeBienvenida = document.createElement("p");
+        mensajeBienvenida.innerHTML = "¡Bienvenido!";
+        document.getElementById("formulario").appendChild(mensajeBienvenida);
+        setTimeout(function () {
+            mensajeBienvenida.style.opacity = "0";
+        }, 3000);
+
+        return true;
+    }
+</script>
+
+{% endblock %}
