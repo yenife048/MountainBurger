@@ -1,0 +1,30 @@
+#formulario {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #d66b00;
+    padding: 20px;
+    border: 5px solid orange;
+    text-align: center;
+}
+
+#formulario h2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin: 13px 0;
+}
+
+#formulario input[type="text"],
+#formulario input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid white;
+}
+
+#formulario p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}

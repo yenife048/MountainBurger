@@ -9,3 +9,5 @@ def formu(request):
     
     return render(request, "Recuperar contraseña/recup.html")
 
+def form(request):
+    return render(request, "Restablecer/restcon.html")

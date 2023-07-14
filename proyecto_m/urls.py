@@ -70,7 +70,6 @@ urlpatterns = [
     
     #formularios
     path('', include('formularios.urls')),
-    path('', include ('formularios.urls')),
 ]
 
 if settings.DEBUG:

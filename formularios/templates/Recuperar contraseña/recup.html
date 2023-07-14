@@ -4,57 +4,34 @@
 <title>{% block title %}Mountain Burger{% endblock %}</title>
 
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'core/css/.css' %}">
-
-<style>
-#formulario {
-    width: 400px;
-    margin: 0 auto;
-    background-color: #d66b00;
-    padding: 20px;
-    border: 5px solid orange;
-    text-align: center;
-}
-
-#formulario h2 {
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    margin: 13px 0;
-}
-
-#formulario input[type="text"],
-#formulario input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid white;
-}
-
-#formulario p {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="{% static 'core/css/recuperar.css' %}">
 
 <div id="formulario">
     <h2>RECUPERAR CONTRASEÑA</h2>
     <form action="#" method="POST" onsubmit="return validarFormulario()">
+        {% csrf_token %} 
         <p>Ingresa el correo con el que te has registrado</p>
         <input type="text" id="email" placeholder="Correo electrónico" required>
+        <p id="errorEmail" style="color: red; display: none;">Por favor, ingresa un correo electrónico válido</p>
         <input class="btn btn-outline-warning" type="submit" value="Recuperar">
     </form>
 </div>
 
 <script>
 function validarFormulario() {
-    // Aquí puedes agregar tu lógica de validación del formulario
-    // Por ejemplo, puedes verificar si el campo de correo está vacío o si tiene un formato válido
-    // Si la validación falla, puedes mostrar un mensaje de error y retornar false para evitar que se envíe el formulario
-    return true; // Por ahora, simplemente retornamos true para que el formulario se envíe
+    var emailInput = document.getElementById('email');
+    var errorEmail = document.getElementById('errorEmail');
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(emailInput.value)) {
+        errorEmail.style.display = 'block';
+        return false;
+    } else {
+        errorEmail.style.display = 'none';
+        return true;
+    }
 }
 </script>
 
 {% endblock %}
+
