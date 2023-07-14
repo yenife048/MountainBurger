@@ -4,3 +4,8 @@ from django.shortcuts import render
 def formularios(request):
     
     return render(request, "iniciar sesion/inicios.html")
+
+def formu(request):
+    
+    return render(request, "Recuperar contraseña/recup.html")
+

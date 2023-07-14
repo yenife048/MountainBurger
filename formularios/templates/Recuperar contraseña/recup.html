@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+<title>{% block title %}Mountain Burger{% endblock %}</title>
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'core/css/.css' %}">
+
+
+
+<div id="formulario">
+    <h2>RECUPERAR CONTRASEÑA</h2>
+    <form action="#" method="POST" onsubmit="return validarFormulario()">
+        <input type="text" id="email" placeholder="Email" required>
+        <input class="btn btn-outline-warning" type="submit" value="Recuperar">
+    </form>
+</div>
+
+
+<script>
+ 
+</script>
+
+{% endblock %}
