@@ -69,8 +69,8 @@ urlpatterns = [
     path('finalizar_compra/',core_views.finalizar_compra, name='finalizar_compra'),
     
     #formularios
-    path('formularios/', include ('formularios.urls')),
-    path('formu/', include ('formularios.urls')),
+    path('', include('formularios.urls')),
+    path('', include ('formularios.urls')),
 ]
 
 if settings.DEBUG:

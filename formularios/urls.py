@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-        path('', views.formularios, name='Formularios'),
-        path('', views.formu, name='Formu'),
-        
+    path('formularios/', views.formularios, name='Formularios'),
+    path('formu/', views.formu, name='Formu'),
 ]
+
