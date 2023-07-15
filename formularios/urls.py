@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     path('formularios/', views.formularios, name='Formularios'),
     path('formu/', views.formu, name='Formu'),
-    path('formu/', views.formu, name='Formu'),
+    path('form/', views.formu, name='Form'),
     
 ]
 

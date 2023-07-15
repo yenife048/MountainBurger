@@ -17,7 +17,9 @@
     </form>
     <span id="credencialesError" class="error"></span>
     <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
-    <p>¿Olvidaste tu contraseña?</p>
+    <a href="{% url 'Formu' %}">¿Olvidaste tu contraseña?</a>
+
+</div>
 </div>
 
 <script>
@@ -27,7 +29,7 @@
 
         document.getElementById("credencialesError").innerHTML = "";
 
-        // Validar correo electrónico
+
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             document.getElementById("credencialesError").innerHTML = "Por favor, ingresa un correo electrónico válido.";
